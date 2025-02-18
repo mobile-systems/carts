@@ -1,9 +1,10 @@
 FROM ubuntu:24.04
-MAINTAINER Yegor Bugayenko <yegor256@gmail.com>
-LABEL Alexander Ocheretin <mobidev@yandex.ru>
+LABEL "org.opencontainers.vendor"="Yegor Bugayenko"
+LABEL org.opencontainers.image.authors="yegor256@gmail.com"
+LABEL "org.opencontainers.image.vendor"="Alexander Ocheretin <mobidev@yandex.ru>"
 WORKDIR /tmp
 
-RUN apt update -y
+RUN apt update -y && apt upgrade -y
 RUN apt install -y build-essential
 RUN apt install -y cmake ninja-build
 
